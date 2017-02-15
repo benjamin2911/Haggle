@@ -1,0 +1,87 @@
+
+h1   {
+    color:#ffffff;
+    font-family:open sans;
+    text-align:center;
+    font-weight: 200;
+    font-size:50px
+     }
+
+
+    
+h2   {
+    color:#ffffff;
+    font-family:open sans;
+    text-align:center;
+    font-weight: 200;
+    font-size:40px;
+    border: black;
+     }
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    padding: 30px 20px;
+}
+
+body:before {
+    content: '';
+    background: url("../img/Photo.jpg") no-repeat center center fixed;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.button   { 
+
+
+    background-color: black;
+    border: 2px solid white;
+    color: #ffffff;
+    padding: 10px 19px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 1.471;
+    border-radius: 6px;
+    margin: auto;
+    display:block;
+    cursor: pointer;
+    position:center;
+    top:50%;
+
+
+}
+
+label {
+    display: block;
+    color: white;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+.input  {
+    float: left;
+    border: 2px solid #bdc3c7;
+    color: Black;
+    border-color: gray;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.467;
+    padding: 8px 12px;
+    height: 42px;
+    border-radius: 6px;
+    width: 100%;
+    margin-bottom: 20px;
+
+
+}

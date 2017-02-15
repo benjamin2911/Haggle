@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+     <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <style>
+      body {
+        background-image: url("https://static.pexels.com/photos/247929/pexels-photo-247929.g");
+        background-size: cover;
+        no-repeat center center fixed;
+      }
+    </style>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  </head>
+  <body>
+
+
+  <form id="form" class="form" action="https://api.formbucket.com/f/buk_4jt8Yg83QwiRUFRkkuAo3BiT">
+    <label for="name">Full Name: </label>
+    <input class="input" name="name" placeholder="ex.John Smith" type="text" />
+
+    <label for="phone">Mobile Number: </label>
+    <input  class="input" name="phone" placeholder="ex.555-555-5555" type="number"/>
+
+    <label for="email"><em>Your</em> Email Address:</label>
+    <input  class="input" name="email" type="email" placeholder="your.name@email.com"/>
+
+    <label for="provider">Payment Provider: </label>
+    <select  class="input" name="provider">
+      <option value="">Select Provider</option>
+      <option value="paypal">Paypal</option>
+      <option value="venmo">Venmo</option>
+      <option value="square_cash">Square Cash</option>
+    </select>
+
+    <label for="link">LINK: </label>
+    <input  class="input" name="link" placeholder="Paste Link Here" type="text" />
+
+    <label for="amount">Amount $: </label>
+    <input class="input" name="amount" placeholder="What is your offer?" type="number" />
+
+    <button id="submit" type="submit" class="button">Submit</button>
+  </form>
+
+  <script>
+  $(function() {
+    $('#form').submit(function(event) {
+      event.preventDefault();
+
+      var form = $(this);
+      var button = $('#submit', form);
+
+      if ($("input[name='email']").val() === '') {
+        alert('Please enter an email address')
+        return
+      }
+
+      $.ajax({
+        url: form.prop('action'),
+        type: 'POST',
+        crossDomain: true,
+        headers : {
+          'accept' : 'application/javascript',
+        },
+        data: $('#form').serialize(),
+        beforeSend: function() {
+          button.prop('disabled', 'disabled');
+        }
+      })
+      .done(function(response) {
+        alert('Thanks for subscribing!');
+        button.prop('disabled', false);
+      })
+      .fail(function(response) {
+        alert('Dang, something went wrong!');
+        button.prop('disabled', false);
+      })
+    });
+  })
+  </script>
+
+  </body>
+</html>
