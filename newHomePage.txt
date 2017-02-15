@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<!-- START HERE -->
+   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+   <!-- Style The Contact Form How Ever You Prefer -->
+   <link rel="stylesheet" href="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/style.css">
+
+<style>
+
+body {
+
+	background-image: url("https://static.pexels.com/photos/247929/pexels-photo-247929.jpeg");
+	background-size: cover;
+	no-repeat center center fixed;
+
+     }
+
+</style>
+
+
+
+
+<body>
+
+
+
+  <form id="gform" method="POST" class="pure-form pure-form-stacked"
+  action="https://script.google.com/macros/s/AKfycbwtu3ukI000ZnjALHSFbGFOpGKZmrVi9BGFSkxRrBECI3N8E26B/exec">
+    <!-- change the form action to your script url -->
+
+    <fieldset class="pure-group">
+      <label for="name">Full Name: </label>
+      <input id="name" name="name" placeholder="ex.John Smith" />
+    </fieldset>
+
+    <fieldset class="pure-group">
+      <label for="phone">Mobile Number: </label>
+      <input id="phone" phone="phone" placeholder="ex.555-555-5555" />
+    </fieldset>
+
+    <fieldset class="pure-group">
+      <label for="email"><em>Your</em> Email Address:</label>
+      <input id="email" name="email" type="email" value=""
+      required placeholder="your.name@email.com"/>
+      <span id="email-invalid" style="visibility:hidden">
+        Must be a valid email address</span>
+    </fieldset>
+
+    <fieldset class="pure-group">
+      <label for="provider">Payment Provider: </label>
+      <input id="provider" name="provider" placeholder="Payal, Venmo, Square Cash, Not sure" />
+    </fieldset>
+
+    <fieldset class="pure-group">
+      <label for="link">LINK: </label>
+      <input id="link" name="link" placeholder="Paste Link Here" />
+    </fieldset>
+
+    <fieldset class="pure-group">
+      <label for="amount">Amount $: </label>
+      <input id="amount" amount="amount" placeholder="What is your offer?" />
+    </fieldset>
+
+    <button class="button-success pure-button button-xlarge">
+      <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+
+  </form>
+
+  <!-- Customise the Thankyou Message People See when they submit the form: -->
+  <div style="display:none;" id="thankyou_message">
+    <h2><em>Thank</em> you for using Haggle!
+      One of our team members will contact you shortly!</h2>
+  </div>
+
+  <!-- Submit the Form to Google Using "AJAX" -->
+  <script data-cfasync="false" type="text/javascript"
+  src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+  <!-- <script data-cfasync="false" type="text/javascript"
+  src="/form-submission-handler.js"></script> -->
+<!-- END -->
+
+</body>
+</html>
